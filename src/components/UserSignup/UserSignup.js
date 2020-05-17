@@ -20,7 +20,6 @@ class UserLogin extends React.Component {
             this.setState({ defalutProfile: false})
             this.setState({ fetchedProfile: true})
         }
-        console.log('User Details...',this.state.ProfileDetails)
     }
     render() { 
         return ( 
