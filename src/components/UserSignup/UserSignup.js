@@ -20,7 +20,9 @@ class UserLogin extends React.Component {
         let api_url = "api/users/subscribe";
         let data = {
             fullname : this.state.ProfileDetails.name,
-            email    : this.state.ProfileDetails.email
+            email    : this.state.ProfileDetails.email,
+            token    : '',
+            subscribed : ''
         }
           getUserData
             .postUserdetails(api_url, data)
