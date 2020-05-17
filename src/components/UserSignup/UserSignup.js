@@ -14,11 +14,13 @@ class UserLogin extends React.Component {
          }
     }
     responseGoogle = (response)=> {
+        console.log('google Profile',response.profileObj)
         this.setState({ ProfileDetails: response.profileObj})
         if(this.state.ProfileDetails.name){
             this.setState({ defalutProfile: false})
             this.setState({ fetchedProfile: true})
         }
+        console.log('User Details...',this.state.ProfileDetails)
     }
     render() { 
         return ( 
