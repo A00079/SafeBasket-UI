@@ -1,6 +1,8 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import './UserLogin.css';
+import getUserData from "../../rest/UserREST.js";
+
 
 
 class UserLogin extends React.Component {
@@ -14,13 +16,21 @@ class UserLogin extends React.Component {
          }
     }
     responseGoogle = (response)=> {
-        console.log('google Profile',response.profileObj)
         this.setState({ ProfileDetails: response.profileObj})
+        let api_url = "api/users/subscribe";
+        let data = {
+            fullname : this.state.ProfileDetails.name,
+            email    : this.state.ProfileDetails.email
+        }
+          getUserData
+            .postUserdetails(api_url, data)
+            .then(response => {
+                console.log("Response Data...", response);
+            });
         if(this.state.ProfileDetails.name){
             this.setState({ defalutProfile: false})
             this.setState({ fetchedProfile: true})
         }
-        console.log('User Details...',this.state.ProfileDetails)
     }
     render() { 
         return ( 
