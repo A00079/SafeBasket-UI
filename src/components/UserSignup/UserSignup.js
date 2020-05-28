@@ -50,9 +50,9 @@ class UserLogin extends React.Component {
                 </div>
                 <div className={`${this.state.fetchedProfile ? "show" : "hide"}`}>
                 <div className="center">
-                    <img src={this.state.ProfileDetails.imageUrl} className='og-profile-img' />
-                    <p className='user-name'>{this.state.ProfileDetails.name}</p>
-                    <p className='user-email'>{this.state.ProfileDetails.email}</p>
+                    {/* <img src={this.state.ProfileDetails.imageUrl} className='og-profile-img' /> */}
+                    {/* <p className='user-name'>{this.state.ProfileDetails.name}</p> */}
+                    {/* <p className='user-email'>{this.state.ProfileDetails.email}</p> */}
                     <button class="next">Next</button>
                 </div>
                 </div>
